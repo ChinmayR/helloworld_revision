@@ -1,8 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"github.com/ChinmayR/helloworld_revision/ps"
+)
 
 func main() {
-	fmt.Println("hello world revision")
+	ps.PrintString()
 }
 
