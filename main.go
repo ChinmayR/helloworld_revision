@@ -1,10 +1,21 @@
 package main
 
 import (
-	"github.com/ChinmayR/helloworld_revision/ps"
+	"fmt"
+
+	"github.com/jessevdk/go-flags"
 )
 
+type options struct {
+	Message string `long:"msg" short:"m"`
+}
+
 func main() {
-	ps.PrintString()
+	var opts options
+	parser := flags.NewParser(&opts, flags.Default)
+	if _, err := parser.Parse(); err != nil {
+		return
+	}
+	fmt.Println(opts.Message)
 }
 
